@@ -1,0 +1,33 @@
+Realizar un programa que lea números enteros desde teclado. La lectura debe finalizar cuando se
+ingrese el número 100, el cual debe procesarse. Informar en pantalla:
+◦ El número máximo leído.
+◦ El número mínimo leído.
+◦ La suma total de los números leídos.
+
+program ejercicio5; //<>/
+var
+ numero, min, max, total: integer;
+ 
+begin
+ 
+ min:= 999;
+ max:= -999;
+ total:= 0;
+ 
+ repeat
+  
+  writeln ('ingrese un numero'); readln (numero);
+  
+  total:= total+numero;
+  
+  if (numero > max) then
+   max:= numero;
+  
+  if (numero < min) then
+   min:= numero;
+ 
+ until (numero = 100);
+  
+ writeln ('la suma total de los numeros es ', total, ' el numero minimo es ', min, ' el numero maximo es ', max); 
+ 
+end.
