@@ -1,0 +1,45 @@
+Realizar un programa que lea desde teclado la información de alumnos ingresantes a la carrera
+Analista en TIC. De cada alumno se lee nombre y nota obtenida en el módulo EPA (la nota es un
+número entre 1 y 10). La lectura finaliza cuando se lee el nombre “Zidane Zinedine“, que debe
+procesarse. Al finalizar la lectura informar:
+- La cantidad de alumnos aprobados (nota 8 o mayor) y
+- la cantidad de alumnos que obtuvieron un 7 como nota
+
+program ejercicio3; //<>/
+type
+ 
+ nota = 1..10;
+ str27 = string [27];
+ 
+var
+ 
+ nombre: str27;
+ notas: nota;
+ aprobados, siete: integer;
+ 
+begin
+ 
+  aprobados:= 0;
+  siete:= 0;
+  
+  repeat
+   
+   writeln ('ingresar nombre'); readln (nombre);
+   writeln ('ingresar nota'); readln (notas);
+   
+   
+   if (notas  >= 8) then
+    aprobados:= aprobados +1;
+   
+   if  (notas = 7) then
+    siete:= siete +1;
+  
+  until (nombre = 'zidane zidane');
+  
+  writeln ('la cantidad de alumnos aprobados es ', aprobados);
+  writeln ('la cantidad de alumnos con nota igual a 7 son ', siete);
+  
+  
+ 
+ 
+end.
