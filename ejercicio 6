@@ -1,0 +1,47 @@
+Realizar un programa que lea información de 200 productos de un supermercado. De cada producto
+se lee código y precio (cada código es un número entre 1 y 200). Informar en pantalla:
+- Los códigos de los dos productos más baratos.
+- La cantidad de productos de más de 16 pesos con código par.
+
+program ejercicio6; //<>/
+const
+ 
+ tope = 200;
+type
+ 
+ rcod = 1..200;
+ 
+var
+ codigo, barato1, barato2: rcod;
+ i, cantidad: integer;
+ precio, min1, min2: real;
+ 
+begin
+ 
+ cantidad:= 0;
+ min1:= 999;
+ min2:= min1;
+ 
+ for i:= 1 to tope do begin
+  
+  writeln ('ingrese codigo de producto'); readln (codigo);
+  writeln ('ingrese precio del producto '); readln (precio);
+  
+  if ( precio < min1) then begin
+   min2:= min1;
+   barato2:= barato1;
+   min1:= precio;
+   barato1:= codigo;
+  end
+  else
+   if ( precio < min2) then begin
+    min2:= precio;
+    barato2:= codigo;
+   end;
+  
+  if ( precio > 16) then
+   cantidad:= cantidad+1;
+ 
+ end;
+ 
+end.
